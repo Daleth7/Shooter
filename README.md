@@ -3,7 +3,7 @@ Shooter
 
 A simple test
 
-Sample Output (population = 100, runs = 1,000,000):
+Sample Output (population = 100, runs = 1,000,000; There is always bias with the first shooter because he always gets to shoot first):
 
 New accuracy: 56
 
