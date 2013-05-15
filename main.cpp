@@ -14,7 +14,7 @@ using std::string;
 using std::endl;
 
 struct Shooter{
-  bool alive;
+	bool alive;
 	int accuracy,	//use int because i'm lazy 
 		kills;
 	Shooter();
@@ -73,6 +73,7 @@ void PromptUserFor(int& tomodify, const string& name, int limit = std::numeric_l
 }
 
 int main(int argc, char **argv){
+	srand(time(NULL));
 	int 
 		initial_population(100),
 		runs(1e6),
@@ -86,7 +87,7 @@ int main(int argc, char **argv){
 	Shooter* person = new Shooter[initial_population];
 		//Set up shooter accuracies
 	for(int i = 0; i < initial_population; i++)
-		cout << "New accuracy: " << (person[i].accuracy = 100-i) << endl;
+		cout << "New accuracy: " << (person[i].accuracy = 100-(rand()%100+1)) << endl;
 //		PromptUserFor(person[i].accuracy, "Accuracy of Next Shooter", 100);
 		//Start the shoot off
 	cout << "Thank you for the information! Please wait while the shooters kill each other..." << endl;
